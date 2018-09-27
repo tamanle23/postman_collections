@@ -1,0 +1,810 @@
+{
+	"variables": [],
+	"info": {
+		"name": "An_branch",
+		"_postman_id": "24323a63-9217-4b96-bf77-679d6aeb337b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ES-Requests",
+			"description": "",
+			"item": [
+				{
+					"name": "ES - List all nodes",
+					"request": {
+						"url": "{{es-host-url}}/_nodes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Take snapshot",
+					"request": {
+						"url": "{{es-host-url}}/_snapshot",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"fs\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Index Settings",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-dev-esobject/_settings",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Update Settings",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-dev-esobject/_settings",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"settings\": {\r\n    \"index\": {\r\n      \"mapping\": {\r\n        \"total_fields\": {\r\n          \"limit\": \"1000000\"\r\n        }\r\n      },\r\n      \"number_of_shards\": \"5\",\r\n      \"max_result_window\": \"500000\",\r\n      \"number_of_replicas\": \"2\"\r\n    }\r\n  }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Index Info",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-1rms-6m-2018.08",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Node info",
+					"request": {
+						"url": "{{es-host-url-3}}/_nodes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Index Stats",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-sit-esobject/_stats",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Shards states",
+					"request": {
+						"url": "{{es-host-url}}/_cat/shards",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Shards of index",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-sit-esobject/_search_shards",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Index Mappings",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-uat-esobject/_mapping",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Analyze",
+					"request": {
+						"url": "{{es-host-url}}/rms/_analyze",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"analyzer\" : \"standard\",\r\n  \"text\" : \"this is a test\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Aggregation",
+					"request": {
+						"url": "{{es-host-url}}/rms/_analyze",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                    \"_id\": 995793595281390592,\n                    \"name\": \"Hello World\"\n                }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Cluster health",
+					"request": {
+						"url": {
+							"raw": "{{es-host-url}}/_cluster/health?pretty",
+							"host": [
+								"{{es-host-url}}"
+							],
+							"path": [
+								"_cluster",
+								"health"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": "",
+									"equals": false,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                    \"id\": \"995793595281390592\",\n                    \"name\": \"Hello World\"\n                }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - All indices",
+					"request": {
+						"url": {
+							"raw": "{{es-host-url-2}}/_cat/indices?v",
+							"host": [
+								"{{es-host-url-2}}"
+							],
+							"path": [
+								"_cat",
+								"indices"
+							],
+							"query": [
+								{
+									"key": "v",
+									"value": "",
+									"equals": false,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                    \"id\": \"995793595281390592\",\n                    \"name\": \"Hello World\"\n                }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Delete index",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-dev-esdependency",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Get All",
+					"request": {
+						"url": "{{es-host-url-1}}/rms-app-orion-uat-esobject/esobject/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match_all\": {}\r\n    },\r\n    \"from\":0,\r\n    \"size\": 10000\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - MGet",
+					"request": {
+						"url": "{{es-host-url-1}}/rms-app-orion-uat-esobject/esobject/_mget",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"docs\" : [\r\n        {\r\n            \"_id\" : \"1643330609\"\r\n        }\r\n    ]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Delete by query",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-sit/escalculationreq/_delete_by_query",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"query\": {\r\n\t\t\"bool\": {\r\n\t\t\t\"must\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"match\": {\r\n\t\t\t\t\t\t\"rateDetail.rateId\": \"163496\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n]\r\n\t\t\t\r\n\t\t}\r\n\t}\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Get By Id",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-sit/esobject/-1835736279",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match_all\": {}\r\n    }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Update By Id",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-dev/esobject/-37609091/_update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doc\":{\r\n                    \"key\": -37609091,\r\n                    \"locationId\": 101,\r\n                    \"rmsObject\": {\r\n                        \"objectKey\": {\r\n                            \"locationId\": 101,\r\n                            \"objectId\": \"166850\",\r\n                            \"objectType\": \"RATE\"\r\n                        },\r\n                        \"objectHash\": -37609091,\r\n                        \"properties\": {\r\n                            \"@type\": \"RELIABLE\",\r\n                            \"status\": 1,\r\n                            \"functionName\": \"SimpleAverage_DirtyAccrued\",\r\n                            \"isSubRate\": false,\r\n                            \"rateId\": \"166850\",\r\n                            \"rateLabel\": \"CLN.CLN5RE200918USD\",\r\n                            \"type\": \"RATE\",\r\n                            \"activated\": true,\r\n                            \"isOnHoliday\": false,\r\n                            \"minSourcesRequired\": 1\r\n                        }\r\n                    }\r\n                }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Bulk",
+					"request": {
+						"url": "{{es-host-url}}/_bulk",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"update\":{\"_id\":\"333537\",\"_index\":\"rms-app-orion-test-xxx7\",\"_type\":\"esobject\"}}\r\n{\"doc\":{\"key\":333537,\"locationId\":101,\"rmsObject\":{\"objectKey\":{\"locationId\":101,\"objectId\":\"1\",\"objectType\":\"RAW\"},\"properties\":{\"adapterSourceDate\":\"NO ADAPTER\",\"liquidityScore\":1,\"rateId\":\"1\",\"rateType\":\"RAW\",\"activated\":false,\"isSubRate\":false,\"status\":10}}}}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Create index",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-test-xxx10",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Create document",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-test-xxx10",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Search for log",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-1rms-6m-2018.08/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\" : {\r\n        \"constant_score\" : { \r\n            \"filter\" : {\r\n                \"term\" : { \r\n                    \"transactionId\": \"cb246a43-6f98-75a5-9d88-e06d6d2fbcd3\"\r\n                }\r\n            }\r\n        }\r\n    },\r\n  \"from\" : 0,\r\n  \"size\" : 1000\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Get All Logs",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-1rms-6m-2018.06/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"query\":{\r\n\t  \"match_all\" : {}\r\n\t},\r\n\t\"sort\": { \"@timestamp\": { \"order\": \"desc\" }}\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Get log by uid",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-1rms-6m-2018.08/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"query\":\r\n  {\r\n  \t\"constant_score\" : {\r\n\t  \"filter\" :{  \r\n\t  \t\"term\": {\r\n\t\t    \t\"transactionId\": \"cb246a43-6f98-75a5-9d88-e06d6d2fbcd3\"\r\n\t\t    }\r\n\t\t}\r\n  \t}\r\n  },\r\n  \"from\":0,\r\n  \"size\": 10000\r\n  \r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Search for log",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-1rms-6m-2018.08/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n\t\t\"bool\": {\n\t\t\t\"must\": [\n\t\t\t\t{\n\t\t\t\t\t\"match\": {\n\t\t\t\t\t\t\"message\": \"orion context refresh event received\"\n\t\t\t\t\t}\n\t\t\t\t}\n]\n\t\t\t\n\t\t}\n\t}\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Search",
+					"request": {
+						"url": "{{es-host-url-1}}/rms-app-orion-uat-esobject/esobject/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n\t\t\"bool\": {\n\t\t\t\"must\": [\n\t\t\t\t{\n\t\t\t\t\t\"match\": {\n\t\t\t\t\t\t\"rmsObject.objectKey.objectId\": \"25657\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t},\n\t\"explain\": true,\n\t\"from\" :0,\n\t\"size\" : 10000,\n\t\"highlight\": {\n        \"fields\" : {\n            \"rmsObject.objectKey.objectId\" : {}\n        }\n    }\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Search EsObject",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-uat-esobject/esobject/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n\t\t\"bool\": {\n\t\t\t\"must\": [\n\t\t\t\t{\n\t\t\t\t\t\"match\": {\n\t\t\t\t\t\t\"rmsObject.objectKey.objectId\": 19844\n\t\t\t\t\t}\n\t\t\t\t}\n]\n\t\t\t\n\t\t}\n\t}\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Full search",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-1rms-6m-2018.05/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match\" : {\r\n            \"message\" : \"20946\"\r\n        }\r\n    }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Search with projection",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-uat/esobject/_search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"query\": {\r\n\t\t\"bool\": {\r\n\t\t\t\"must\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"match\": {\r\n\t\t\t\t\t\t\"rmsObject.objectKey.objectId\": \"1028\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n]\r\n\t\t\t\r\n\t\t}\r\n\t},\r\n\t\"stored_fields\": [\"_timestamp\",\"_source\"]\r\n}\r\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ES - Count",
+					"request": {
+						"url": "{{es-host-url}}/rms-app-orion-dev/_count",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic bG9nc3Rhc2gtcm1zOnJtczEyMzQ1",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\": {\r\n  \"bool\" : {\r\n    \"filter\" : [\r\n      {\r\n        \"terms\" : {\r\n          \"rmsDependency.parentHash\" : [\r\n            -655927951\r\n          ],\r\n          \"boost\" : 1.0\r\n        }\r\n      }\r\n    ],\r\n    \"disable_coord\" : false,\r\n    \"adjust_pure_negative\" : true,\r\n    \"boost\" : 1.0\r\n  }\r\n}\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swagger",
+			"description": "",
+			"item": [
+				{
+					"name": "Swagger - Get API Docs",
+					"request": {
+						"url": "http://localhost:9021/v2/api-docs",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Swagger - UI",
+					"request": {
+						"url": "http://localhost:9021/swagger-ui.html",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SonarCube",
+			"description": "",
+			"item": [
+				{
+					"name": "Get sys status",
+					"request": {
+						"url": " https://sonarqube.sgp.dbs.com:8443/api/system/status",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get sys status copy",
+					"request": {
+						"url": " https://sonarqube.sgp.dbs.com:8443/api/metrics",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}]
+}
